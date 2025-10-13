@@ -1,6 +1,6 @@
 # RA3-Tabelas-Hash
-Trabalho de "Resolução de Problemas Estruturados em Computação"
+### Trabalho de "Resolução de Problemas Estruturados em Computação"
 ----
-##Alunos
+## Alunos
 - Eduardo Zenere
 - Pedro Antonio
