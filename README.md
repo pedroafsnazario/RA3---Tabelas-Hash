@@ -28,7 +28,12 @@
 (Os arrays tem essas quantidades de posições estranhas pois eles precisam ter uma quantidade de posições igual à um número primo, se não as funções de hashing não rodam direito, principalmente as de sondagem no hash duplo)
 
 - **Funções Hashing**⚙
-  - TBD
+  - Divisão (Resto por divisão)
+  - Método de Knuth (Multiplicação)
+  - Multiplicação + Divisão
+- **Foi feita também 2 Funções Hashing adicionais para a Tabela Hash Dupla devida a sua estrutura/função de sondagem que são:**
+  - Subtração com primo fixo
+  - Murmurhash3
  
   
 - **Sobre a memória**🧠
@@ -47,7 +52,6 @@
 
 **Funções & Estrutura:** O Código foi relativamente mais fácil de implementar pelo fator de já termos a estrutura de BTree (que criamos de por meio de suas aulas e trabalhos passados anteriormente), a estrutura dessa tabela...
 
-**3 Maiores Listas:**
 
 ----------------------------
 
@@ -56,8 +60,6 @@
 
 **Funções & Estrutura:** A mais fácil de se implementar em si foi a Tabela Encadeada, devido a...
 
-**3 Maiores Listas:**
-
 ----------------------------
 
 ### Tabela Hash Dupla🎎
@@ -65,98 +67,12 @@
 
 **Funções & Estrutura:**
 
-**3 Maiores Listas:**
-
 
 ## Análise das Tabelas🔎
-
-### Por Tempo⏳
-Utilizamos de uma library que mede o tempo de execução de nosso código, e com isto, teve como resultado a medição da "velocidade" de execução para cada Tabela Hash e Função Hash
-- #️⃣ Btree
-  - Módulo Direto (Resto por divisão)
-  - Multiplicativo (Método de Knuth)
-  - Soma dos digitos e deslocamento
-    
-----------------------------
-
-- #️⃣ Encadeada
-  - Módulo Direto (Resto por divisão)
-  - Multiplicativo (Método de Knuth)
-  - Soma dos digitos e deslocamento
-    
-----------------------------
-
- 
-- #️⃣ Dupla
-  - Módulo Direto (Resto por divisão)
-  - Multiplicativo (Método de Knuth)
-  - Soma dos digitos e deslocamento
+- Está junto do código 3 arquivos .ini aonde estão os diferentes resultados que obtivemos com o teste.
+- Como fizemos diversas iterações com as tabelas (para tamanhos e funções diferentes), os resultados também foram diversos, apesar de que, dentro dos 3 testes, percebemos alguns dados que permaneceram o mesmo.
 
 
-  
-### Por Colisões💥
-Colisões são o número de vezes que levou ao script da Tabela Hash para encontrar um espaço nulo para a inserção de um valor novo
-- #️⃣ Btree
-  - Módulo Direto (Resto por divisão)
-  - Multiplicativo (Método de Knuth)
-  - Soma dos digitos e deslocamento
-    
-----------------------------
-
-- #️⃣ Encadeada
-  - Módulo Direto (Resto por divisão)
-  - Multiplicativo (Método de Knuth)
-  - Soma dos digitos e deslocamento
-    
-----------------------------
-
-- #️⃣ Dupla
-  - Módulo Direto (Resto por divisão)
-  - Multiplicativo (Método de Knuth)
-  - Soma dos digitos e deslocamento
-
-### Por Gap's🕳
-Quantidade de espaços vazios dentro de uma tabela Hash
-- #️⃣ Btree
-  - Módulo Direto (Resto por divisão)
-  - Multiplicativo (Método de Knuth)
-  - Soma dos digitos e deslocamento
-
-----------------------------
-
-- #️⃣ Encadeada
-  - Módulo Direto (Resto por divisão)
-  - Multiplicativo (Método de Knuth)
-  - Soma dos digitos e deslocamento
-    
-----------------------------
-
-- #️⃣ Dupla
-  - Módulo Direto (Resto por divisão)
-  - Multiplicativo (Método de Knuth)
-  - Soma dos digitos e deslocamento
-    
-
-## Análise por Gráficos📊
-
-- #️⃣ Btree
-  - Módulo Direto (Resto por divisão)
-  - Multiplicativo (Método de Knuth)
-  - Soma dos digitos e deslocamento
-    
-----------------------------
-
-- #️⃣ Encadeada
-  - Módulo Direto (Resto por divisão)
-  - Multiplicativo (Método de Knuth)
-  - Soma dos digitos e deslocamento
-    
-----------------------------
-
-- #️⃣ Dupla
-  - Módulo Direto (Resto por divisão)
-  - Multiplicativo (Método de Knuth)
-  - Soma dos digitos e deslocamento
 
 ## Resultado & Conclusão✅
 - Feitas as análises gerais, podemos concluir que, no geral, dentre as 3 tabelas apresentadas, implementadas e testadas neste trabalho, a que ganha o título de "Melhor Tabela" vai para: Tabela ....
