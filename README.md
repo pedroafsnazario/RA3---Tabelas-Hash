@@ -45,24 +45,60 @@
 
 ### Por Tempo⏳
 - #️⃣ Btree
+- - Módulo Direto (Resto por divisão)
+  - Multiplicativo (Método de Knuth)
+  - Soma dos digitos e deslocamento
 - #️⃣ Encadeada
+- - Módulo Direto (Resto por divisão)
+  - Multiplicativo (Método de Knuth)
+  - Soma dos digitos e deslocamento
 - #️⃣ Dupla
+- - Módulo Direto (Resto por divisão)
+  - Multiplicativo (Método de Knuth)
+  - Soma dos digitos e deslocamento
 
   
 ### Por Colisões💥
 - #️⃣ Btree
+- - Módulo Direto (Resto por divisão)
+  - Multiplicativo (Método de Knuth)
+  - Soma dos digitos e deslocamento
 - #️⃣ Encadeada
+- - Módulo Direto (Resto por divisão)
+  - Multiplicativo (Método de Knuth)
+  - Soma dos digitos e deslocamento
 - #️⃣ Dupla
+- - Módulo Direto (Resto por divisão)
+  - Multiplicativo (Método de Knuth)
+  - Soma dos digitos e deslocamento
 
 ### Por Gap's🕳
 - #️⃣ Btree
+- - Módulo Direto (Resto por divisão)
+  - Multiplicativo (Método de Knuth)
+  - Soma dos digitos e deslocamento
 - #️⃣ Encadeada
+- - Módulo Direto (Resto por divisão)
+  - Multiplicativo (Método de Knuth)
+  - Soma dos digitos e deslocamento
 - #️⃣ Dupla
+- - Módulo Direto (Resto por divisão)
+  - Multiplicativo (Método de Knuth)
+  - Soma dos digitos e deslocamento
 
 ## Análise por Gráficos📊
 - #️⃣ Btree
+- - Módulo Direto (Resto por divisão)
+  - Multiplicativo (Método de Knuth)
+  - Soma dos digitos e deslocamento
 - #️⃣ Encadeada
+- - Módulo Direto (Resto por divisão)
+  - Multiplicativo (Método de Knuth)
+  - Soma dos digitos e deslocamento
 - #️⃣ Dupla
+- - Módulo Direto (Resto por divisão)
+  - Multiplicativo (Método de Knuth)
+  - Soma dos digitos e deslocamento
 
 ## Resultado & Conclusão✅
 - Feitas as análises gerais, podemos concluir que, no geral, dentre as 3 tabelas apresentadas, implementadas e testadas neste trabalho, a que ganha o título de "Melhor Tabela" vai para: Tabela ....
