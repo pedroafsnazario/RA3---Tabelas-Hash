@@ -14,17 +14,40 @@
 ### Tabela Hash Btree🌳
 **Descrição:** Nesse tipo de tabela, cada espaço da hash guarda uma árvore binária. Então, se acontecer de vários valores caírem na mesma posição (as famosas colisões), eles são organizados dentro dessa árvore. Isso ajuda a deixar as buscas e inserções mais rápidas do que se fosse só uma lista simples.
 
+**Funções:**
+
+**3 Maiores Listas:**
+
+
 ### Tabela Hash Encadeada⛓
 **Descrição:** Aqui, cada posição da tabela guarda uma lista encadeada. Quando dois valores caem no mesmo lugar, eles são colocados um “atrás do outro” nessa lista. É um jeito bem comum e fácil de lidar com colisões, e funciona muito bem na maioria dos casos.
 
+**Funções:**
+
+**3 Maiores Listas:**
+
+
+
 ### Tabela Hash Dupla🎎
 **Descrição:** Na hash dupla, a ideia é usar duas funções hash diferentes. Se um valor tenta ocupar uma posição que já está cheia, a segunda função é usada pra achar outro lugar livre. Isso evita que vários elementos se acumulem em sequência e ajuda a espalhar melhor os dados pela tabela.
+
+**Funções:**
+
+**3 Maiores Listas:**
 
 
 ## Análise das Tabelas🔎
 
 ### Por Tempo⏳
+- #️⃣ Btree
+- #️⃣ Encadeada
+- #️⃣ Dupla
+
+  
 ### Por Colisões💥
+- #️⃣ Btree
+- #️⃣ Encadeada
+- #️⃣ Dupla
 
 ## Resultado & Conclusão✅
   
