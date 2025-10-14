@@ -45,6 +45,7 @@
 ## Análise das Tabelas🔎
 
 ### Por Tempo⏳
+Utilizamos de uma library que mede o tempo de execução de nossos scripts e com isto teve a possibilidade de medir a "velocidade" de execução para cada Tabela Hash e Função Hash
 - #️⃣ Btree
 - - Módulo Direto (Resto por divisão)
   - Multiplicativo (Método de Knuth)
@@ -68,6 +69,7 @@
 
   
 ### Por Colisões💥
+Colisões são o número de vezes que levou ao script da Tabela Hash para encontrar um espaço nulo para a inserção de um valor novo
 - #️⃣ Btree
 - - Módulo Direto (Resto por divisão)
   - Multiplicativo (Método de Knuth)
@@ -88,6 +90,7 @@
   - Soma dos digitos e deslocamento
 
 ### Por Gap's🕳
+Quantidade de espaços vazios dentro de uma tabela Hash
 - #️⃣ Btree
 - - Módulo Direto (Resto por divisão)
   - Multiplicativo (Método de Knuth)
