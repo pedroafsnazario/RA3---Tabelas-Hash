@@ -50,13 +50,13 @@
 **Funções:** 
 - **Inserção**: Uma função para inserir novos elementos dentro da tabela, ela primeiramente calcula a posição no array usando a função de hash, se não existir uma árvore naquela posição, cria-se uma nova BTree com o elemento. caso contrário, insere-se o elemento na árvore que estiver naquela posição e atualiza o contador de colisões com a altura do nó inserido (representando a "profundidade da colisão").
 - **Busca**: Procura pelo valor da chave, calcula a posição no array usando (uma das) a função Hash, se houver uma árvore naquela posição, realiza-se uma busca dentro da árvore (BTree.search), e enfim, ele retornará o valor correspondente a chave ou NULL se não encontrado
-- **gap:** Faz uma análise da distribuição de elementos na tabela hash, e então calcula-se os gaps (posições vazias existentes) entre cada árvore, e por fim retorna um array com o maior, menor e a média dos gaps
+- **Gap:** Faz uma análise da distribuição de elementos na tabela hash, e então calcula-se os gaps (posições vazias existentes) entre cada árvore, e por fim retorna um array com o maior, menor e a média dos gaps
 - **Altura:** Faz uma análise da altura das árvores em cada posição da tabela e calcula-se o menor, maior e a média de altura das árvores (permitindo avaliar o balanceamento da tabela e identificar possíveis árvores muito profundas (responsáveis por gerar muitas colisões)
 
 **Estrutura:**
 - **ARRAY PRINCIPAL:** Um vetor de tamanho fixo (determinado pela variável 'tamanho'), que serve como uma base para tabela hash. Cada posição do array pode armazenar uma instância de BTree, ou seja, uma árvore binária que armazena os elementos que colidiram naquele índice da tabela.
 - **FUNÇÃO HASH:** É uma função fornecida externamente que recebe a chave e o tamanho da tabela e retorna um valor inteiro que indica a posição no array. Essa função define como os elementos são distribuídos entre as árvores da tabela.
-- **ÁRVORE BINÁRIA:**Cada elemento do array (tabela(i)) pode ser uma árvore binária que armazena múltiplos elementos com chaves diferentes. Cada BTNode(em outras palvras, folha) armazena uma chave (key) e um valor (Registro), além de referências para os filhos esquerdo e direito. A árvore mantém a ordenação das chaves, permitindo busca, inserção e remoção eficientes dentro de cada posição do array.
+- **ÁRVORE BINÁRIA:** Cada elemento do array (tabela(i)) pode ser uma árvore binária que armazena múltiplos elementos com chaves diferentes. Cada BTNode(em outras palvras, folha) armazena uma chave (key) e um valor (Registro), além de referências para os filhos esquerdo e direito. A árvore mantém a ordenação das chaves, permitindo busca, inserção e remoção eficientes dentro de cada posição do array.
 - **CONTADOR DE COLISÕES:** Mantém o registro do número de colisões que ocorreram ao inserir elementos na tabela (ou seja, quando múltiplos elementos caem na mesma posição do array e precisam ser inseridos na árvore associada).
 
 
@@ -71,7 +71,7 @@
 -
 
 **Estrutura:**
--
+- 
 -
 -
 
@@ -81,14 +81,17 @@
 **Descrição:** Na hash dupla, a ideia é usar duas funções hash diferentes. Se um valor tenta ocupar uma posição que já está cheia, a segunda função é usada pra achar outro lugar livre. Isso evita que vários elementos se acumulem em sequência e ajuda a espalhar melhor os dados pela tabela.
 
 **Funções:** 
--
--
--
+- **Pegar_chave:** Responsável por aplicar essa lógica de dupla hash, combinando o índice inicial da função de hash primária com o deslocamento definido pela função de sondagem multiplicado pelo número de tentativas já realizadas. Assim, a cada colisão o índice é recalculado até encontrar uma posição livre ou confirmar que a chave já está presente.
+- **Busca:** Percorre a tabela utilizando a mesma lógica. Ela começa na posição inicial calculada com pegar_chave e verifica se o elemento naquela posição não foi removido e se a chave bate com a desejada. Caso não encontre, incrementa o contador de tentativas e calcula uma nova posição usando a sondagem. Esse processo continua até que a chave seja encontrada ou até que todas as posições possíveis tenham sido verificadas.
+- **Inserção:** O método inserir adiciona um novo elemento na tabela seguindo a mesma sequência de cálculos de posição. Se a posição calculada estiver vazia, o elemento é inserido diretamente. Se houver colisão, a função percorre as posições subsequentes usando a sondagem, contabilizando cada colisão, até encontrar um espaço livre ou um slot marcado como removido, que pode ser reutilizado. Caso a chave já exista na tabela, o método atualiza o valor correspondente. Se a tabela estiver cheia, a inserção falha. Após inserir com sucesso, o contador de elementos da tabela é atualizado.
+- **Gap:** serve para analisar a distribuição dos elementos no array. Ela percorre o vetor verificando os intervalos de posições vazias entre os elementos existentes. Durante esse percurso, ela identifica o menor e o maior intervalo de espaços vazios consecutivos, além de calcular a média desses gaps.
 
 **Estrutura:**
--
--
--
+- **ARRAY PRINCIPAL:** Um vetor de objeto NoHashSimples, onde cada posição armazena um par (chave, valor) representado por um Registro. Se houver duas chaves resultando na mesma posição, o algoritmo usa uma segunda função de hash para encontrar o próximo índice disponível.
+- **FUNÇÃO HASH PRIMÁRIA:** A função responsável para calcular-se a posição incial no array. Ela recebe a chave, e o tamanho da tabela, e assim retorna o índice base
+- **FUNÇÃO HASH SECUNDÁRIA(SONDA):** Serve para definir o passo de deslocamento quando ocorre uma colisão. Essa segunda função é essencial para garantir que todas as posições possam ser eventualmente alcançadas (evitando ciclos).
+- **CONTROLE DE COLISÕES E CONTAGEM DE ELEMENTOS:** Registra a quantidade de colisões ocorridas e indica quantos itens estão ocupando a tabela.
+
 
 ## Análise das Tabelas🔎
 - Está junto do código 1 arquivo .ini aonde estão os diferentes resultados que obtivemos com o teste e os tipos de testes solicitados para se fazer no trabalho, como por exemplo.
@@ -103,10 +106,12 @@
   - Cada iteração da Hash Table Encadeada gerou seu trio de maiores listas, mas o **maior** trio dentre as diversas iterações foi:  1138 / 1128 / 1126 (encontrada na iteração HASH ENCADEADA 10K - 10M VALORES - FUNÇÃO 3) 
   - A iteração mais rápida foi ⏳
   - Houve diversas iterações sem Gap´s! (ou seja, o espaço das Hash Tables daquelas iterações foram totalmente bem aproveitadas!) 🕳
-  - As iterações com mais colisões foi para as Hash **TBD** onde sua média de colisões foi **acima de TBD**! 💥
-  
+  - As iterações com mais colisões foi para as Hash **BTree** onde uma de suas iterações foi **acima de 110 milhões**! 💥
 
-- Também foi feita uma análise em gráficos para termos melhor visualização do desempenho das Hash Tables.(TBD)
+- Também foi feita uma análise em **gráficos** para termos melhor visualização do desempenho das Hash Tables.
+  - Gráfico para Hash Encadeada
+  - Gráfico para Hash Btree
+  - Gráfico para Hash Dupla
 
 
 ## Resultado & Conclusão✅
@@ -115,5 +120,5 @@
   - **A Tabela Hash BTree 🌳** se mostrou ser a mais estável e eficiente, mantendo tempos consistentes mesmo com o aumento dos dados (devido a sua estrutura de busca balanceada)
   - **A Tabela Hash Dupla 🎎** foi a que mais se destacou devido a seu tempo de busca e inserção serem as melhores das 3 tabelas, além de ter aproveitado a memória de forma eficiente. Ou seja, esta tabela tem mais probabilidade de ser eficiente para aplicações que exigem alto desempenho e controle de fator de carga.
 
-- Em geral, percebe-se com esse projeto que não há uma solução universal, mas sim diferentes estratégias que podemos utilizar para problemas distintos. Cabendo a nós desenvolvedores escolher a melhor técnica para a distribuição dos dados, volume esperado, velocidade ou simplicidade, entre outros.
+- Em geral, percebe-se com esse projeto que não há uma solução universal, mas sim diferentes estratégias que podemos utilizar para problemas distintos. Cabendo a nós desenvolvedores escolher a melhor técnica para o problema que estamos a lidar, seja esse problema por tamanho ou volume de dados, ou a necessidade de tornar algum processo mais rápido e eficiente, e por aí vai! :]
   
