@@ -66,14 +66,23 @@
 **Descrição:** Aqui, cada posição da tabela guarda uma lista encadeada. Quando dois valores caem no mesmo lugar, eles são colocados um “atrás do outro” nessa lista. É um jeito bem comum e fácil de lidar com colisões, e funciona muito bem na maioria dos casos.
 
 **Funções:**
--
--
--
+- **Inserção:** Calcula-se a posição inicial do Array por meio da função Hash, se a posição estiver vazia, cria-se um Nó (NoHashEncadeado) e o coloca na posição. Caso contrário, incrementa o contador de colisões e adiciona o novo nó no inicio da lista encadeada daquela posição e por fim ajusta-se o ponteiro próximo do novo nó para o nó que estava na posição.
+- **Busca:** Também se calcula a posição inicial no array por meio Hash e verifica se há algum nó na posição correspondente, caso exista, percorre a lista encadeada da posição, comparando a chave de cada nó com a chave buscada. Por fim, retorna-se o valor correspondente, ou NULL caso a chave não esteja presente.
+- **Gap:** Analisa o intervalo de posições vazias do array principal, e então se calcula o menor, maior e a média dos gaps entre as posições ocupadas
+- **maiores_listas:** Percorre todas as listas encadeadas do array e mede seus tamanhos, retorna os três maiores tamanhos de listas encontrados.
+
 
 **Estrutura:**
-- 
--
--
+- **ARRAY PRINCIPAL:** É um vetor de tamanho fixo que serve como base da tabela hash, cada posição do array pode armazenar o início de uma lista encadeada de nós (NoHashEncadeado).
+- **NÓS DA LISTA:** Cada nó armazena
+  - Uma chave (chave) que identifica o elemento
+  - Um valor (Registro) associado à chave
+  - Um ponteiro para o próximo nó da lista (proximo)
+  - Permite que múltiplos elementos que colidem na mesma posição do array sejam encadeados.
+- **FUNÇÃO DE HASH:** Determina a posição inicial de cada elemento no array, é usada para distribuir os elementos de maneira uniforme nas posições da tabela.
+- **CONTADOR DE COLISÕES:** Registra quantas vezes elementos foram inseridos em posições já ocupadas, ou seja, quando é necessário encadear um novo nó na lista existente.
+- **LISTAS ENCADEADAS (Como resolução para as colisões):** Quando duas ou mais chaves caem na mesma posição do array, elas são armazenadas em uma lista ligada na mesma posição. Novos elementos são adicionados no início da lista, garantindo inserção rápida.
+- **ANÁLISE DE DISTRIBUIÇÃO:** A tabela pode medir os gaps entre posições ocupadas (gap()) e identificar as maiores listas (maiores_listas()), permitindo avaliar a eficiência da distribuição dos elementos.
 
 ----------------------------
 
