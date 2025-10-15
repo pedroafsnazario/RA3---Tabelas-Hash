@@ -47,9 +47,17 @@
 ### Tabela Hash Btree🌳
 **Descrição:** Nesse tipo de tabela, cada espaço da hash guarda uma árvore binária. Então, se acontecer de vários valores caírem na mesma posição (as famosas colisões), eles são organizados dentro dessa árvore. Isso ajuda a deixar as buscas e inserções mais rápidas do que se fosse só uma lista simples.
 
-**Funções:** TBD
+**Funções:** 
+- **Inserção**: Uma função para inserir novos elementos dentro da tabela, ela primeiramente calcula a posição no array usando a função de hash, se não existir uma árvore naquela posição, cria-se uma nova BTree com o elemento. caso contrário, insere-se o elemento na árvore que estiver naquela posição e atualiza o contador de colisões com a altura do nó inserido (representando a "profundidade da colisão").
+- **Busca**: Procura pelo valor da chave, calcula a posição no array usando (uma das) a função Hash, se houver uma árvore naquela posição, realiza-se uma busca dentro da árvore (BTree.search), e enfim, ele retornará o valor correspondente a chave ou NULL se não encontrado
+- **gap:** Faz uma análise da distribuição de elementos na tabela hash, e então calcula-se os gaps (posições vazias existentes) entre cada árvore, e por fim retorna um array com o maior, menor e a média dos gaps
+- **Altura:** Faz uma análise da altura das árvores em cada posição da tabela e calcula-se o menor, maior e a média de altura das árvores (permitindo avaliar o balanceamento da tabela e identificar possíveis árvores muito profundas (responsáveis por gerar muitas colisões)
 
-**Estrutura:** TBD
+**Estrutura:**
+- **ARRAY PRINCIPAL:** Um vetor de tamanho fixo (determinado pela variável 'tamanho'), que serve como uma base para tabela hash. Cada posição do array pode armazenar uma instância de BTree, ou seja, uma árvore binária que armazena os elementos que colidiram naquele índice da tabela.
+- **FUNÇÃO HASH:** É uma função fornecida externamente que recebe a chave e o tamanho da tabela e retorna um valor inteiro que indica a posição no array. Essa função define como os elementos são distribuídos entre as árvores da tabela.
+- **ÁRVORE BINÁRIA:**Cada elemento do array (tabela(i)) pode ser uma árvore binária que armazena múltiplos elementos com chaves diferentes. Cada BTNode(em outras palvras, folha) armazena uma chave (key) e um valor (Registro), além de referências para os filhos esquerdo e direito. A árvore mantém a ordenação das chaves, permitindo busca, inserção e remoção eficientes dentro de cada posição do array.
+- **CONTADOR DE COLISÕES:** Mantém o registro do número de colisões que ocorreram ao inserir elementos na tabela (ou seja, quando múltiplos elementos caem na mesma posição do array e precisam ser inseridos na árvore associada).
 
 
 ----------------------------
@@ -57,18 +65,30 @@
 ### Tabela Hash Encadeada⛓
 **Descrição:** Aqui, cada posição da tabela guarda uma lista encadeada. Quando dois valores caem no mesmo lugar, eles são colocados um “atrás do outro” nessa lista. É um jeito bem comum e fácil de lidar com colisões, e funciona muito bem na maioria dos casos.
 
-**Funções:** TBD
+**Funções:**
+-
+-
+-
 
-**Estrutura:** TBD
+**Estrutura:**
+-
+-
+-
 
 ----------------------------
 
 ### Tabela Hash Dupla🎎
 **Descrição:** Na hash dupla, a ideia é usar duas funções hash diferentes. Se um valor tenta ocupar uma posição que já está cheia, a segunda função é usada pra achar outro lugar livre. Isso evita que vários elementos se acumulem em sequência e ajuda a espalhar melhor os dados pela tabela.
 
-**Funções:** TBD
+**Funções:** 
+-
+-
+-
 
-**Estrutura:** TBD
+**Estrutura:**
+-
+-
+-
 
 ## Análise das Tabelas🔎
 - Está junto do código 1 arquivo .ini aonde estão os diferentes resultados que obtivemos com o teste e os tipos de testes solicitados para se fazer no trabalho, como por exemplo.
@@ -80,11 +100,11 @@
   - Gap´s (Maior, Menor e Média)
     
 - Como fizemos diversas iterações com as tabelas (para tamanhos e funções hashing diferentes), os resultados também foram diversos, mas foi possível análisar algumas coisas:
-  - Cada iteração da Hash Table Encadeada gerou seu trio de maiores listas, mas o **maior** trio dentre as diversas iterações foi:  1138 / 1128 / 1126 (encontrada na iteração HASH ENCADEADA 10K - 10M VALORES - FUNÇÃO 3)
-  - A iteração mais rápida foi
-  - Houve iterações sem Gap´s! (ou seja, o espaço das Hash Tables daquelas iterações foram totalmente bem aproveitadas!)
-  - A iteração com mais colisões foi de
-  - TBD
+  - Cada iteração da Hash Table Encadeada gerou seu trio de maiores listas, mas o **maior** trio dentre as diversas iterações foi:  1138 / 1128 / 1126 (encontrada na iteração HASH ENCADEADA 10K - 10M VALORES - FUNÇÃO 3) 
+  - A iteração mais rápida foi ⏳
+  - Houve diversas iterações sem Gap´s! (ou seja, o espaço das Hash Tables daquelas iterações foram totalmente bem aproveitadas!) 🕳
+  - As iterações com mais colisões foi para as Hash **TBD** onde sua média de colisões foi **acima de TBD**! 💥
+  
 
 - Também foi feita uma análise em gráficos para termos melhor visualização do desempenho das Hash Tables.(TBD)
 
