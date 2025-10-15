@@ -113,7 +113,7 @@
     
 - Como fizemos diversas iterações com as tabelas (para tamanhos e funções hashing diferentes), os resultados também foram diversos, mas foi possível análisar algumas coisas:
   - Cada iteração da Hash Table Encadeada gerou seu trio de maiores listas, mas o **maior** trio dentre as diversas iterações foi:  1138 / 1128 / 1126 (encontrada na iteração HASH ENCADEADA 10K - 10M VALORES - FUNÇÃO 3) 
-  - A iteração mais rápida foi ⏳
+  - A iteração mais rápida foi para a Hash Encadeada onde uma de suas iterações (HASH ENCADEADA 100K - 100K VALORES - FUNÇÃO 02) teve uma velocidade de **4ms para Inserção** e **7ms para Busca**! ⏳
   - Houve diversas iterações sem Gap´s! (ou seja, o espaço das Hash Tables daquelas iterações foram totalmente bem aproveitadas!) 🕳
   - As iterações com mais colisões foi para as Hash **BTree** onde uma de suas iterações foi **acima de 110 milhões**! 💥
 
