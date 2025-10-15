@@ -74,12 +74,19 @@
 - Está junto do código 1 arquivo .ini aonde estão os diferentes resultados que obtivemos com o teste e os tipos de testes solicitados para se fazer no trabalho, como por exemplo.
   - Tempo de Execução (tanto de Inserção quanto para Pesquisa)
   - Número de Colisões
-  - 3 Maiores Listas(para cada iteração)
+  - 3 Maiores Listas(para cada iteração de Hash Encadeada)
+  - Altura (Maior, Menor e Média para Hash Btree)
   - Memória utilizada
-  - Gap´s (Maior, Menor e média)
+  - Gap´s (Maior, Menor e Média)
     
 - Como fizemos diversas iterações com as tabelas (para tamanhos e funções hashing diferentes), os resultados também foram diversos, mas foi possível análisar algumas coisas:
-TBD
+  - Cada iteração da Hash Table Encadeada gerou seu trio de maiores listas, mas o **maior** trio dentre as diversas iterações foi:  1138 / 1128 / 1126 (encontrada na iteração HASH ENCADEADA 10K - 10M VALORES - FUNÇÃO 3)
+  - A iteração mais rápida foi
+  - Houve iterações sem Gap´s! (ou seja, o espaço das Hash Tables daquelas iterações foram totalmente bem aproveitadas!)
+  - A iteração com mais colisões foi de
+  - TBD
+
+- Também foi feita uma análise em gráficos para termos melhor visualização do desempenho das Hash Tables.(TBD)
 
 
 ## Resultado & Conclusão✅
