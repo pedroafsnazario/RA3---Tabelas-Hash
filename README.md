@@ -41,6 +41,11 @@
   - **Memória de Ocupação Fixa:** É a memória base + a quantidade de memória que os valores de teste ocupam.
   - **Memória Utilizada:** A memória de ocupação fixa + a memória utilizada pela arvore hash no momento. Ou seja, pra pegar a memória que a estrutura de tabela hash está ocupando, é preciso fazer **Memória utilizada - Memória de ocupação fixa**
 
+- **Adendo❗**
+  - Implementamos também uma Hash Linear no projeto
+  - O objetivo e comparar essa estrutura mais simples com as outras 3 estruturas que criamos
+  - Em suma, para termos mais análises
+
      
 ## As Tabelas
 
