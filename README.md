@@ -123,9 +123,17 @@
   - As iterações com mais colisões foi para as Hash **BTree** onde uma de suas iterações foi **acima de 110 milhões**! 💥
 
 - Também foi feita uma análise em **gráficos** para termos melhor visualização do desempenho das Hash Tables.
-  - Gráfico para Hash Encadeada
-  - Gráfico para Hash Btree
-  - Gráfico para Hash Dupla
+  ### 🧩 Tempo de Inserção
+  ![Tempo de Inserção](analises-hash/tempoinsercao.png)
+
+  ### 🔎 Tempo de Pesquisa
+  ![Tempo de Pesquisa](analises-hash/tempopesquisa.png)
+
+  ### 🧠 Uso de Memória
+  ![Uso de Memória](analises-hash/memoriausada.png)
+
+  ### 💥 Total de Colisões
+  ![Colisões](analises-hash/colisoestotal.png)
 
 
 ## Resultado & Conclusão✅
